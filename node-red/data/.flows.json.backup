@@ -1,0 +1,107 @@
+[
+    {
+        "id": "3ad978ab5c34df3c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cdd359dd5093b65d",
+        "type": "mqtt-broker",
+        "name": "home-server-mosquitto",
+        "broker": "mqtt://mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "2",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "2",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "2",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "838ac628a939968f",
+        "type": "mqtt in",
+        "z": "3ad978ab5c34df3c",
+        "name": "",
+        "topic": "Test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cdd359dd5093b65d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c746ac309c508d6",
+        "type": "mqtt out",
+        "z": "3ad978ab5c34df3c",
+        "name": "",
+        "topic": "Test",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cdd359dd5093b65d",
+        "x": 350,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "297e16e5c86cccf2",
+        "type": "inject",
+        "z": "3ad978ab5c34df3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "4c746ac309c508d6"
+            ]
+        ]
+    }
+]
